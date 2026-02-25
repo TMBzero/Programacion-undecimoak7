@@ -2,19 +2,18 @@ reservas = []
 cupos = 5
 
 def hay_cupo(reservas, capacidad):
-    
-    while capacidad > 0:
+    salir = True
+    while salir:
         print(f"Cupos disponibles: {capacidad}")
         mensaje = input("Nombre (o 'salir'): ")
         if mensaje == "salir":
-            break
+            salir = False
         elif capacidad == 0:
             print(f"No quedan cupos disponibles")
         else:
             reservas += [f"-{mensaje}"]
             print("Reserva aceptada.")
-            
-        capacidad -= 1
+            capacidad -= 1
         
     return reservas, capacidad
 
